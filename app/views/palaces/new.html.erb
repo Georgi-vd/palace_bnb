@@ -1,1 +1,16 @@
-new.html.erb
+<%= form_for @palace do |f| %>
+
+    <%= f.label :name, "Enter a name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :description, "Enter a name" %>
+    <%= f.text_field :description %>
+
+    <%= f.label :location, "Enter a name" %>
+    <%= f.text_field :location %>
+
+    <%= f.label :price, "Enter a name" %>
+    <%= f.number_field :price %>
+    <%= f.submit %>
+
+<% end %>
