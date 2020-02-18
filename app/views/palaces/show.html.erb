@@ -28,7 +28,7 @@
       </div>
       <br>
       <div class="palace-show-card">
-        <h3>A bit more about this palace...</h3>
+        <h4>A bit more about this palace...</h4>
         <div class="flex">
           <div class="flex">
             <p><%= @palace.description %></p>
@@ -41,7 +41,11 @@
 
     <div class="col-4">
       <div class="palace-show-card">
-        <button type="button" class="btn btn-outline-dark">Book this palace!</button>
+        <button type="button" class="btn btn-outline-dark"><%= link_to "Book this palace!", new_palace_booking_path(@palace) %></button>
+        <br>
+        <%= link_to palaces_path(@palace) do %>
+          <i class="fas fa-arrow-left"></i>
+        <% end %>
       </div>
     </div>
   </div>
