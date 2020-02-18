@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: palace
+    environment:
+      - APPLICATION_PORT=3310
+      - DATABASE_URL=postgres://hugomori@host.docker.internal:5432/palace_bnb_development
+      - DATABASE_SCHEMA=public
+      - DATABASE_SSL=false
+      - FOREST_AUTH_SECRET=9106bdbe67a9b1bcef877609b985fb73a362ca92322c29eb0255211dec11c7b26b0184fcb6c55841095f44c4217649f8
+      - FOREST_ENV_SECRET=37c67ef91c84d5c3f43879892cf8d64dd50cadacfbce1ff10a1d31a67bb2e75e
+    ports:
+      - "3310:3310"
+    volumes:
+      - ./:/usr/src/app
