@@ -40,18 +40,21 @@
     <p>The holidays you deserve</p>
   </div>
 </div>
+
 <div class="container">
   <% @palaces.each do |pal| %>
-    <div class="card-palace">
-      <%= image_tag 'https://source.unsplash.com/collection/8751926', alt: "Palace" %>
-      <div class="card-palace-infos">
-        <div>
-          <h3><%= link_to pal.name, palace_path(pal) %></h3>
-          <p><%= pal.description %></p>
+    <%= link_to palace_path(pal) do %>
+      <div class="card-palace">
+        <%= image_tag 'https://source.unsplash.com/collection/8751926', alt: "Palace" %>
+        <div class="card-palace-infos">
+          <div>
+            <h3><%= pal.name %></h3>
+            <p><%= pal.description %></p>
+          </div>
+          <h2 class="card-palace-pricing"> <%= pal.price %> CHF</h2>
         </div>
-        <h2 class="card-palace-pricing"> <%= pal.price %> </h2>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
 
