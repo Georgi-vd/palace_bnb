@@ -10,7 +10,7 @@ puts 'Cleaning database...'
 Palace.destroy_all
 
 puts 'Creating user'
-user = User.create!(email: 'bob@bob.com', password: 'xxxxxxxx')
+user = User.create!(email: 'bob@bobby.com', password: 'xxxxxxxxz')
 puts 'Creating palaces...'
 20.times do
   palace = Palace.new(
