@@ -1,5 +1,5 @@
 class PalacesController < ApplicationController
-    def index
+  def index
     @palaces = Palace.all
   end
 
@@ -39,6 +39,6 @@ class PalacesController < ApplicationController
   private
 
   def palace_params
-    params.require(:palace).permit(:name, :description, :price, :location)
+    params.require(:palace).permit(:name, :description, :price, :location, :photo)
   end
 end
