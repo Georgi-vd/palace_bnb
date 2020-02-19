@@ -2,21 +2,18 @@
 <br />
 <br />
 <div class="test123">
-  <form class="form-signin">
-    <img class="mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <p class="h5 mb-4 font-weight-normal font-weight-bold">Bienvenue 👋</p>
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-  
-        <%= f.text_field :email, class: 'form-control forms-coller', placeholder: "Email adress" %>
-        <%= f.text_field :password, class: 'form-control forms-coller', placeholder: "Password" %>
-        <%= f.text_field :password_confirmation, class: 'form-control', placeholder: "Password confirmation" %>
+  <img class="mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+  <p class="h5 mb-2 font-weight-normal font-weight-bold">Bienvenue 👋</p>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="form-inputs form-signin">
+      <%= f.email_field :email, required: true, autofocus: true, class: 'form-control forms-coller', placeholder: "Email adress", input_html: { autocomplete: "email" } %>
+      <%= f.password_field :password, required: true, class: 'form-control forms-coller', placeholder: "Password", input_html: { autocomplete: "new-password" } %>
+      <%= f.password_field :password_confirmation, required: true, class: 'form-control', placeholder: "Password confirmation", input_html: { autocomplete: "new-password" } %>
 
-        <div class="form-actions py-3">
-          <%= f.button :submit, "Sign up", class: 'btn btn-lg btn-dark btn-block rounded-15' %>
-        </div>
-        <%= link_to "Log in", new_user_session_path, class: 'text-muted' %>
+      <div class="form-actions py-3">
+        <%= f.submit "Sign up", autocomplete: "new-password", class: 'btn btn-lg btn-dark btn-block rounded-15' %>
       </div>
-    <% end %>
-  </form>
+    </div>
+  <% end %>
+  <%= link_to "Log in", new_user_session_path, class: 'text-muted' %>
 </div>
