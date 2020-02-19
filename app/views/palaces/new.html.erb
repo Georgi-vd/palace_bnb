@@ -1,23 +1,26 @@
 <div class = container>
-  <h3>New palace</h3><br>
-    <%= simple_form_for @palace do |f| %>
-      <div class="form-group">
-        <%= f.input :name, class: 'form-control', placeholder: 'Enter the name of your palace' %>
-      </div>
-      <div class="form-group">
-        <%= f.input :description, class: 'form-control', placeholder: 'Enter a description' %>
-      </div>
-      <div class="form-group">
-        <%= f.input :location, class: 'form-control', placeholder: 'Enter the location' %>
-      </div>
-       <div class="form-group">
-        <%= f.input :price, class: 'form-control', placeholder: 'Price / night' %>
-      </div>
-      <div class="form-group">
-        <%= f.input :photo, as: :file %>
-      </div>
-        <%= f.submit 'Create my palace', class: 'btn btn-primary' %>
-    <% end %>
+  <div class="form-palace">
+    <h3>New palace</h3><br>
+      <%= simple_form_for @palace do |f| %>
+        <div class="form-group">
+          <%= f.input :name, class: 'form-control', placeholder: 'Enter the name of your palace' %>
+        </div>
+        <div class="form-group">
+          <%= f.input :description, class: 'form-control', placeholder: 'Enter a description' %>
+        </div>
+        <div class="form-group">
+          <%= f.input :location, class: 'form-control', placeholder: 'Enter the location' %>
+        </div>
+         <div class="form-group">
+          <%= f.input :price, class: 'form-control', placeholder: 'Price / night' %>
+        </div>
+        <div class="form-group">
+          <%= f.input :photo, as: :file %>
+        </div>
+          <%= f.submit 'Create my palace', class: 'btn btn-dark btn-sm text-white' %>
+          <%= link_to "Back", palaces_path, class: 'btn btn-dark btn-sm text-white' %>
+      <% end %>
+  </div>
 </div>
 
 
