@@ -2,7 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 24px;
+  margin: 12px;
   margin-bottom: 24px;
 }
 
@@ -40,3 +40,36 @@
   position: relative;
   text-decoration: none;
 }
+
+.card-booking {
+  padding: 50px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 24px;
+  margin-bottom: 24px;
+}
+
+.card-booking img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-booking h3 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-booking p {
+  font-size: 24px;
+  opacity: .7;
+  margin: 0;
+  color: #DCB669;
+}
+
+.card-booking a {
+  margin-top: 10px;
+}
+
