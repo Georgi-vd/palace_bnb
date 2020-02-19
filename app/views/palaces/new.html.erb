@@ -1,5 +1,5 @@
 <div class = container>
-  <h3>Edit my palace</h3><br>
+  <h3>New palace</h3><br>
     <%= form_for @palace do |f| %>
       <div class="form-group">
         <%= f.label :name, "Enter the name of your palace" %>
@@ -15,8 +15,11 @@
       </div>
        <div class="form-group">
         <%= f.label :price, "Enter a price" %>
-        <%= f.number_field :price, class: 'form-control' %>
+        <p><%= f.number_field :price, class: 'form-control' %> CHF </p>
       </div>
-        <%= f.submit 'Update my palace', class: 'btn btn-primary' %>
+      <div class="form-group">
+        <%= cl_image_tag @palace.photo.key, height: 100, width: 200, crop: :fill if @cocktail.photo.attached? %>
+      </div>
+        <%= f.submit 'Create my palace', class: 'btn btn-primary' %>
     <% end %>
 </div>
