@@ -1,16 +1,22 @@
-<%= form_for @palace do |f| %>
-
-    <%= f.label :name, "Enter a name" %>
-    <%= f.text_field :name %>
-
-    <%= f.label :description, "Enter a description" %>
-    <%= f.text_field :description %>
-
-    <%= f.label :location, "Enter a location" %>
-    <%= f.text_field :location %>
-
-    <%= f.label :price, "Enter a price" %>
-    <%= f.number_field :price %>
-    <%= f.submit %>
-
-<% end %>
+<div class = container>
+  <h3>Edit my palace</h3><br>
+    <%= form_for @palace do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "Enter the name of your palace" %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description, "Enter a description" %>
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :location, "Enter a location" %>
+        <%= f.text_field :location, class: 'form-control' %>
+      </div>
+       <div class="form-group">
+        <%= f.label :price, "Enter a price" %>
+        <%= f.number_field :price, class: 'form-control' %>
+      </div>
+        <%= f.submit 'Update my palace', class: 'btn btn-primary' %>
+    <% end %>
+</div>
