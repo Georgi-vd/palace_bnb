@@ -45,20 +45,31 @@
 </div>
 
 <div class="container">
-  <% @palaces.each do |pal| %>
-    <%= link_to palace_path(pal) do %>
-      <div class="card-palace">
-        <%= image_tag 'https://source.unsplash.com/collection/8751926', alt: "Palace" %>
-        <div class="card-palace-infos">
-          <div>
-            <h3><%= pal.name %></h3>
-            <p><%= pal.description %></p>
+  <div class="row">
+    <div class="col-8 mt-3">
+      <% @palaces.each do |pal| %>
+        <%= link_to palace_path(pal) do %>
+          <div class="card-palace">
+            <%= image_tag 'https://source.unsplash.com/collection/8751926', alt: "Palace" %>
+            <div class="card-palace-infos">
+              <div>
+                <h3><%= pal.name %></h3>
+                <p><%= pal.description %></p>
+              </div>
+              <h2 class="card-palace-pricing"> <%= pal.price %> CHF</h2>
+            </div>
           </div>
-          <h2 class="card-palace-pricing"> <%= pal.price %> CHF</h2>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-4 mt-3">
+      <div class="sidemap-card sticky-top border">
+        <div style="background-image: url('https://images.unsplash.com/photo-1532154066703-3973764c81fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2434&q=80')" class="p-3 b-image">
+          <p>Map... Coming soon</p>
         </div>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
 </div>
 
 
@@ -74,3 +85,21 @@
   </div>
 </div>
  -->
+
+ <!--  <h4 class="justify-content-between text-center mb-3">
+            <strong>Réservez</strong>
+          </h4>
+          <div class="mb-3">
+            <label for="firstName">ARRIVÉE</label>
+            <input type="text" class="form-control border border-dark" id="firstName" placeholder="DD/MM/YYYY" value="" required="">
+          </div>
+          <div class="mb-4">
+            <label for="firstName">DÉPART</label>
+            <input type="text" class="form-control border border-dark" id="firstName" placeholder="DD/MM/YYYY" value="" required="">
+          </div>
+          <div class="mb-2">
+            <button type="button" class="btn btn-dark btn-lg btn-block"></button>
+          </div>
+          <div class="text-center">
+            <span class="so3dpm2">Vous ne serez débité que si vous confirmez</span>
+          </div> -->
