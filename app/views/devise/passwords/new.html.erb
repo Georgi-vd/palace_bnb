@@ -1,18 +1,21 @@
-<h2>Forgot your password?</h2>
+<br />
+<br />
+<br />
+<div class="test123">
+  <form class="form-signin">
+    <img class="mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <p class="h5 mb-4 font-weight-normal font-weight-bold">Forgot your password?</p>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+  
+        <%= f.text_field :email, class: 'form-control forms-coller', placeholder: "Email adress" %>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+        <div class="form-actions py-3">
+          <%= f.button :submit, "Reset my password", class: 'btn btn-lg btn-dark btn-block rounded-15' %>
+        </div>
+        <%= link_to "Log in", new_user_session_path, class: 'text-muted' %>
+        <%= link_to "Sign Up", new_user_registration_path, class: 'text-muted' %>
+      </div>
+    <% end %>
+  </form>
+</div>
