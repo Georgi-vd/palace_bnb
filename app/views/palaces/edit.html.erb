@@ -18,10 +18,10 @@
         <p><%= f.number_field :price, class: 'form-control' %> CHF </p>
       </div>
       <div class="form-group">
-        <%= cl_image_tag @palace.photo.key, height: 100, width: 200, crop: :fill if @cocktail.photo.attached? %>
       </div>
         <%= f.submit 'Update my palace', class: 'btn btn-primary' %>
     <% end %>
+    <%= cl_image_tag @palace.photo, height: 100, width: 200, crop: :fill %>
 </div>
 
 
