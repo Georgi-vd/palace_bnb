@@ -15,7 +15,7 @@
           <%= f.input :price, class: 'form-control', placeholder: 'Price / night' %>
         </div>
         <div class="form-group">
-          <%= f.input :photo, as: :file %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         </div>
         <div class="flex-btns">
           <%= f.submit 'Update my palace', class: 'btn btn-dark btn-sm text-white' %>
