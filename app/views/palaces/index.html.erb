@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Dream Palace</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -17,7 +17,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Options
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
@@ -26,13 +26,11 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-secondary my-2 my-sm-0 login-btn" type="submit"><%= link_to "Login", new_user_registration_path %></button>
     </form>
   </div>
 </nav>
@@ -44,23 +42,7 @@
   </div>
 </div>
 
-<!-- <div class="container">
-  <% @palaces.each do |pal| %>
-    <%= link_to palace_path(pal) do %>
-      <div class="card-palace">
-        <%= image_tag 'https://source.unsplash.com/collection/8751926', alt: "Palace" %>
-        <div class="card-palace-infos">
-          <div>
-            <h3><%= pal.name %></h3>
-            <p><%= pal.description %></p>
-          </div>
-          <h2 class="card-palace-pricing"> <%= pal.price %> CHF</h2>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
- -->
+
 <div class="container">
   <% @palaces.each do |pal| %>
     <%= link_to palace_path(pal) do %>
