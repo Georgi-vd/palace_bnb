@@ -1,6 +1,14 @@
 class PalacesController < ApplicationController
   def index
-    @palaces = Palace.all
+    # @palaces = Palace.all
+    @palaces = Palace.geocoded #returns flats with coordinates
+
+    @markers = @palaces.map do |pal|
+      {
+        lat: pal.latitude,
+        lng: pal.longitude
+      }
+    end
   end
 
   def show
