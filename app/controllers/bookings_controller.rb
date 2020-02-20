@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def new
     @palace = Palace.find(params[:palace_id])
     @booking = @palace.bookings.build
