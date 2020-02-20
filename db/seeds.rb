@@ -12,7 +12,7 @@ require 'faker'
 # User.destroy_all
 
 # puts 'Creating user'
-# user = User.create!(email: 'bob@bobb.com', password: 'xxxxxrxxx')
+user = User.create!(email: 'bob@bobb.com', password: 'xxxxxrxxx')
 # puts 'Creating palaces...'
 # 20.times do
 #   palace = Palace.new(
@@ -26,11 +26,11 @@ require 'faker'
 # end
 # puts 'Finished!'
 
-# Palace.create!(name: "palace-test", description: "pretty", price: 2000, location: "9 route de Malagny, 1294 Genthod", user_id: 2)
-Palace.create!(name: "Palais Magique", description: "Magnificent", price: 2000, location: "23 Redcliffe Road, SW10 9NJ London", user_id: 2)
-Palace.create!(name: "Palais Potager", description: "Sublime", price: 2000, location: "43 rue la Sinne 68100 Mulhouse", user_id: 2)
-Palace.create!(name: "Arabian Nights Palace", description: "Overwhelming", price: 2000, location: "Chemin de la Moraine 31 1162 St Prex", user_id: 2)
-Palace.create!(name: "Deluxe", description: "Ideal", price: 2000, location: "Route du Jorat 82, 1000 Lausanne 26", user_id: 2)
-Palace.create!(name: "Carribbean Dream", description: "Awesome", price: 2000, location: "7a Rue du Général de Gaule 68510 Esetten", user_id: 2)
-Palace.create!(name: "Snowflake Castle", description: "Fantastic", price: 2000, location: "3 rue Herold 75001 Paris", user_id: 2)
+# Palace.create!(name: "palace-test", description: "pretty", price: 2000, location: "9 route de Malagny, 1294 Genthod", user: user)
+Palace.create!(name: "Palais Magique", description: "Magnificent", price: 2000, location: "23 Redcliffe Road, SW10 9NJ London", user: user)
+Palace.create!(name: "Palais Potager", description: "Sublime", price: 2000, location: "43 rue la Sinne 68100 Mulhouse", user: user)
+Palace.create!(name: "Arabian Nights Palace", description: "Overwhelming", price: 2000, location: "Chemin de la Moraine 31 1162 St Prex", user: user)
+Palace.create!(name: "Deluxe", description: "Ideal", price: 2000, location: "Route du Jorat 82, 1000 Lausanne 26", user: user)
+Palace.create!(name: "Carribbean Dream", description: "Awesome", price: 2000, location: "7a Rue du Général de Gaule 68510 Esetten", user: user)
+Palace.create!(name: "Snowflake Castle", description: "Fantastic", price: 2000, location: "3 rue Herold 75001 Paris", user: user)
 
