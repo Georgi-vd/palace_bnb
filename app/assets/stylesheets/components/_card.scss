@@ -1,15 +1,21 @@
 .card-palace {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   margin: 12px;
   margin-bottom: 24px;
+  max-height: 200px;
+  border-radius: 5px;
 }
 
-.card-palace img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
+// .card-palace img {
+//   height: 200px;
+//   width: 100%;
+//   object-fit: cover;
+// }
+
+.card-img {
+
 }
 
 .container {
@@ -19,26 +25,34 @@
   }
 }
 
+.intro {
+  margin-top: 24px;
+  border-bottom: 1px solid #DCB669;
+  color: #251E17;
+}
+
 .card-palace h3 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+  font-size: 20px;
 }
 
 .card-palace p {
-  font-size: 12px;
+  font-size: 14px;
   opacity: .7;
-  margin: 0;
   color: #DCB669;
 }
 
-.card-palace .card-palace-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-  text-decoration: none;
+// .card-palace .card-palace-infos {
+//   padding: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+//   text-decoration: none; // Classe n'existe plus!
+// }
+
+.palace-show-card {
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
 .card-booking {
