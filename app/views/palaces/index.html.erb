@@ -39,10 +39,15 @@
       </div>
     </div>
 
-    <div class="col-4 mt-3">
-      <div class="map-card sticky-top border">
-        <p>Ceci est une carte</p>
-      </div>
+    <div class="col-4 mt-3 map-card sticky-top border">
+      <p>Ceci est une carte</p>
+      <div class="col-4 mt-3"
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
     </div>
 
   </div>
