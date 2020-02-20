@@ -1,7 +1,15 @@
 class PalacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @palaces = Palace.all
+    # @palaces = Palace.all
+    @palaces = Palace.geocoded #returns flats with coordinates
+
+    @markers = @palaces.map do |pal|
+      {
+        lat: pal.latitude,
+        lng: pal.longitude
+      }
+    end
   end
 
   def show
@@ -13,7 +21,11 @@ class PalacesController < ApplicationController
   end
 
   def create
-    @palace = Palace.new(palace_params)
+    #@palace = Palace.new(palace_params)
+    #@palace.user = current_user
+
+    @palace = current_user.palaces.build(palace_params)
+
     if @palace.save
       redirect_to palace_path(@palace)
     else

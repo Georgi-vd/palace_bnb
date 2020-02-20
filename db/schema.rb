@@ -55,7 +55,8 @@ ActiveRecord::Schema.define(version: 2020_02_20_132507) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_palaces_on_user_id"
   end
 
