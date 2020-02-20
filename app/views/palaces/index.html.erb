@@ -44,7 +44,7 @@
   </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
   <% @palaces.each do |pal| %>
     <%= link_to palace_path(pal) do %>
       <div class="card-palace">
@@ -60,17 +60,24 @@
     <% end %>
   <% end %>
 </div>
-
-
-<!-- <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-  </div>
-</div>
  -->
+<div class="container">
+  <% @palaces.each do |pal| %>
+    <%= link_to palace_path(pal) do %>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <%= image_tag'https://source.unsplash.com/collection/8751926', alt: "Palace", class: "card-img" %>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title"><%= pal.name %></h3>
+              <p class="card-text"><%= pal.description %></p>
+              <p class="card-text"><small class="text-muted"><%= pal.price %> CHF</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
