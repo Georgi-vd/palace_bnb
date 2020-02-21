@@ -17,19 +17,19 @@
                             <%= image_tag "https://lh3.googleusercontent.com/proxy/bgA5Coee98vNS7s0CNl5Drmc_2ECzWG4aRRxsw6ge4suKus2MncyOGO9czf58uKgKRdWW17Q1lRzvaziSAT0Zeut2C72_tlhFA7KPKc1z7Qu-2l9h8j-dRD5cF2RrRYtB52ma_AACG8n-Z3YvuIc6HnXOr_RYg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                             <ul class="dropdown-menu dropdown-menu-right text-center depalce-nav-bar" aria-labelledby="navbarDropdown">
                                 <li class="p-1 mt-1">
-                                    <%= link_to "Paramètres", edit_user_registration_path, class: "dropdown-item" %>
+                                    <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
                                 </li>
                                 <hr>
                                 <li class="p-1 mt-1">
-                                    <%= link_to "Créer un palace", new_palace_path, class: "dropdown-item" %>
+                                    <%= link_to "Create a Palace", new_palace_path, class: "dropdown-item" %>
                                 </li>
                                 <hr>
                                 <li class="p-1 mt-1">
-                                    <%= link_to "Mes réservations", new_palace_path, class: "dropdown-item" %>
+                                    <%= link_to "My bookings", new_palace_path, class: "dropdown-item" %>
                                 </li>
                                 <hr>
                                 <li class="p-1 mt-1">
-                                    <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                                    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                                 </li>
                             </ul>
                         </li>
