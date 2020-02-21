@@ -1,18 +1,18 @@
-<br />
-<br />
-<br />
-<div class="test123">
-  <img class="mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-  <p class="h5 mb-2 font-weight-normal font-weight-bold">Content de vous revoir 👋</p>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs form-signin">
-      <%= f.email_field :email, required: false, autofocus: true, class: 'form-control forms-coller', placeholder: "Email adress", input_html: { autocomplete: "email" } %>
-      <%= f.password_field :password, required: false, class: 'form-control', placeholder: "Password", input_html: { autocomplete: "current-password" } %>
-      <div class="form-actions py-3">
-        <%= f.submit "Log in", class: 'btn btn-lg btn-dark btn-block rounded-15' %>
-      </div>
+<div class = container>
+  <div class="form-user">
+    <div class="test123">
+      <h2 class="mb-2 font-weight-normal">Welcome back</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs form-signin">
+          <%= f.email_field :email, required: false, autofocus: true, class: 'form-control forms-coller', placeholder: "Email adress", input_html: { autocomplete: "email" } %>
+          <%= f.password_field :password, required: false, class: 'form-control', placeholder: "Password", input_html: { autocomplete: "current-password" } %>
+          <div class="form-actions py-3">
+            <%= f.submit "Log in", class: 'btn btn-lg btn-dark btn-block rounded-15' %>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to "Sign Up", new_user_registration_path, class: 'text-muted' %>
+      <%= link_to "Forgot your password?", new_user_password_path, class: 'text-muted' %>
     </div>
-  <% end %>
-  <%= link_to "Sign Up", new_user_registration_path, class: 'text-muted' %>
-  <%= link_to "Forgot your password?", new_user_password_path, class: 'text-muted' %>
+  </div>
 </div>

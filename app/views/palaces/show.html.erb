@@ -47,7 +47,7 @@
       <div class="palace-show-card sticky-top border">
         <div style="background-color: rgb(255, 255, 255)" class="p-3">
           <h4 class="justify-content-between text-center mb-3">
-            <strong>Réservez <%= @palace.name %></strong>
+            <strong>Book <%= @palace.name %></strong>
           </h4>
           <div>
             <%= simple_form_for [@palace, @booking] do |f| %>
@@ -74,7 +74,7 @@
             <% end %>
           </div>
           <div class="text-center">
-            <span class="so3dpm2">Vous ne serez débité que si vous confirmez</span>
+            <span class="so3dpm2">Your account will not be credited until confirmation</span>
           </div>
         </div>
       </div>

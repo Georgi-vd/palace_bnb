@@ -1,17 +1,17 @@
-<br />
-<br />
-<br />
-<div class="test123">
-  <img class="mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-  <p class="h5 mb-2 font-weight-normal font-weight-bold">Forgot your password?</p>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs form-signin">
-      <%= f.email_field :email, required: true, autofocus: true, class: 'form-control forms-coller', placeholder: "Email adress", input_html: { autocomplete: "email" } %>
-      <div class="form-actions py-3">
-        <%= f.submit "Reset my password", class: 'btn btn-lg btn-dark btn-block rounded-15' %>
-      </div>
+<div class = container>
+  <div class="form-user">
+    <div class="test123">
+      <h2 class="mb-2 font-weight-normal">Forgot your password?</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs form-signin">
+          <%= f.email_field :email, required: true, autofocus: true, class: 'form-control forms-coller', placeholder: "Email adress", input_html: { autocomplete: "email" } %>
+          <div class="form-actions py-3">
+            <%= f.submit "Reset my password", class: 'btn btn-lg btn-dark btn-block rounded-15' %>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to "Log in", new_user_session_path, class: 'text-muted' %>
+      <%= link_to "Sign Up", new_user_registration_path, class: 'text-muted' %>
     </div>
-  <% end %>
-  <%= link_to "Log in", new_user_session_path, class: 'text-muted' %>
-  <%= link_to "Sign Up", new_user_registration_path, class: 'text-muted' %>
+  </div>
 </div>
