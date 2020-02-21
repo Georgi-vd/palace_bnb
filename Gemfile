@@ -19,7 +19,7 @@ gem 'devise'
 gem 'cloudinary', '~> 1.12.0'
 gem 'faker'
 gem 'datetime_picker_input'
-
+gem 'geocoder'
 
 
 group :development do

@@ -6,7 +6,9 @@
   <p class="h5 mb-2 font-weight-normal font-weight-bold">Bienvenue 👋</p>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <div class="form-inputs form-signin">
-      <%= f.email_field :email, required: true, autofocus: true, class: 'form-control forms-coller', placeholder: "Email adress", input_html: { autocomplete: "email" } %>
+      <%= f.text_field :first_name, required: true, autofocus: true, class: 'form-control forms-coller', placeholder: "First name" %>
+      <%= f.text_field :last_name, required: true, class: 'form-control forms-coller', placeholder: "Last name" %>
+      <%= f.email_field :email, required: true, class: 'form-control forms-coller', placeholder: "Email adress", input_html: { autocomplete: "email" } %>
       <%= f.password_field :password, required: true, class: 'form-control forms-coller', placeholder: "Password", input_html: { autocomplete: "new-password" } %>
       <%= f.password_field :password_confirmation, required: true, class: 'form-control', placeholder: "Password confirmation", input_html: { autocomplete: "new-password" } %>
 
