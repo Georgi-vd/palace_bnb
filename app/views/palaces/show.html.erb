@@ -2,19 +2,11 @@
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://img.gtsstatic.net/reno/imagereader.aspx?imageurl=http%3A%2F%2FRealEstateAdminImages.gabriels.net%2F170%2F141%2F170-20180429074349328-974.jpg&option=N&idlisting=listingmedia&w=1600&permitphotoenlargement=false&fallbackimageurl=https%3A%2F%2Fstatic-christiesrealestate-cms-production-4.gtsstatic.net%2Fresources%2F_responsive%2Fimages%2Fcommon%2Fnophoto%2Flisting.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1531257240678-d5b1922e672d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1561042771-abb14f50b8f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="d-block w-100" alt="...">
-      </div>
-      <% @palace.photos.each do |photo| %>
-        <div class="carousel-item">
-         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-       </div>
+      <% @palace.photos.each_with_index do |photo, index| %>
+        <% .carousel{ class: "#{ "active" if index == 0 }"} %>
+          <div class="carousel-item-active">
+            <%= cl_image_tag photo.key, class: "d-block w-100" %>
+          </div>
      <% end %>
    </div>
    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -28,53 +20,53 @@
 </div>
 
 <div class="row">
-  <div class="col-8 mt-3">
-    <div class="palace-show-card">
-      <h1><%= @palace.name %></h1>
-    </div>
-    <hr class="mb-4">
-    <br>
-    <div class="palace-show-card">
-      <h4>A bit more about this palace...</h4>
+    <div class="col-8 mt-3">
+      <div class="palace-info-card">
+        <h1><%= @palace.name %></h1>
+      </div>
+      <hr class="mb-4">
+      <br>
+      <div class="palace-info-card">
+        <h4>A bit more about this palace...</h4>
         <div class="flex">
-          <p><%= @palace.description %></p>
-          <p><%= @palace.location %></p>
-          <p class = "price"><%= @palace.price %> CHF</p>
+          <div class="flex">
+            <p><%= @palace.description %></p>
+            <p><%= @palace.location %></p>
+            <p class = "price"><%= @palace.price %> CHF</p>
+          </div>
         </div>
       </div>
+      <%= link_to "Back", palaces_path, class: 'btn btn-dark btn-sm text-white' %>
+      <%= link_to "Edit palace", edit_palace_path(@palace), class: 'btn btn-dark btn-sm text-white' %>
     </div>
-    <%= link_to "Back", palaces_path, class: 'btn btn-dark btn-sm text-white' %>
-    <%= link_to "Edit palace", edit_palace_path(@palace), class: 'btn btn-dark btn-sm text-white' %>
-  </div>
-
-  <div class="col-4 mt-3">
-    <div class="palace-show-card sticky-top border">
-      <div style="background-color: rgb(255, 255, 255)" class="p-3">
-        <h4 class="justify-content-between text-center mb-3">
-          <strong>Réservez <%= @palace.name %></strong>
-        </h4>
-        <div>
-          <%= simple_form_for [@palace, @booking] do |f| %>
-          <div class="form-group mb-3">
-            <%= f.input :arrival_date, as: :date_time_picker, input_html: { data:
-              {
-                date_format: "DD.MM.YYYY",
-                date_day_view_header_format: 'MMM YYYY',
-                date_side_by_side: true,
-                date_min_date: Time.current.strftime('%Y-%m-%d')
-              }}, class: 'border border-dark', placeholder: "DD/MM/YYYY" %>
-            </div>
-            <div class="form-group mb-4">
-              <%= f.input :departure_date, as: :date_time_picker, input_html: { data:
-                {
-                  date_format: "DD.MM.YYYY",
-                  date_day_view_header_format: 'MMM YYYY',
-                  date_side_by_side: true,
-                  date_min_date: Time.current.strftime('%Y-%m-%d')
-                }}, class: 'border border-dark', placeholder: "DD/MM/YYYY" %>
+    <div class="col-4 mt-3">
+      <div class="palace-show-card sticky-top border">
+        <div style="background-color: rgb(255, 255, 255)" class="p-3">
+          <h4 class="justify-content-between text-center mb-3">
+            <strong>Réservez <%= @palace.name %></strong>
+          </h4>
+          <div>
+            <%= simple_form_for [@palace, @booking] do |f| %>
+              <div class="form-group mb-3">
+                <%= f.input :arrival_date, as: :date_time_picker, input_html: { data:
+                  {
+                    date_format: "DD.MM.YYYY",
+                    date_day_view_header_format: 'MMM YYYY',
+                    date_side_by_side: true,
+                    date_min_date: Time.current.strftime('%Y-%m-%d')
+                  }}, class: 'border border-dark', placeholder: "DD/MM/YYYY" %>
               </div>
-            </div>
-            <%= f.submit 'Book this palace!', class: 'text-white btn btn-dark btn-lg btn-block mb-2' %>
+              <div class="form-group mb-4">
+                <%= f.input :departure_date, as: :date_time_picker, input_html: { data:
+                  {
+                    date_format: "DD.MM.YYYY",
+                    date_day_view_header_format: 'MMM YYYY',
+                    date_side_by_side: true,
+                    date_min_date: Time.current.strftime('%Y-%m-%d')
+                  }}, class: 'border border-dark', placeholder: "DD/MM/YYYY" %>
+              </div>
+              </div>
+                <%= f.submit 'Book this palace!', class: 'text-white btn btn-dark btn-lg btn-block mb-2' %>
             <% end %>
           </div>
           <div class="text-center">
@@ -84,6 +76,6 @@
       </div>
     </div>
   </div>
-</div>
+</div>s
 
 

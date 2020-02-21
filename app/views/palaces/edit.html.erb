@@ -20,6 +20,7 @@
         <div class="flex-btns">
           <%= f.submit 'Update my palace', class: 'btn btn-dark btn-sm text-white' %>
           <%= link_to "Back", palaces_path, class: 'btn btn-dark btn-sm text-white' %>
+          <%= link_to "Delete my palace", palace_path(@palace), method: :delete, class: 'btn btn-outline-secondary' %>
         </div>
       <% end %>
   </div>
