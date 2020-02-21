@@ -1,0 +1,11 @@
+<div>
+  <%= simple_form_for [palace, booking] do |f| %>
+    <div class="form-group mb-3">
+      <%= f.input :arrival_date, as: :date, html5: true, class: 'border border-dark', placeholder: "DD/MM/YYYY" %>
+    </div>
+    <div class="form-group mb-4">
+      <%= f.input :departure_date, as: :date, html5: true, class: 'border border-dark', placeholder: "DD/MM/YYYY" %>
+    </div>
+    <%= f.submit 'Book this palace!', class: 'text-white btn btn-dark btn-lg btn-block mb-2' %>
+  <% end %>
+</div>

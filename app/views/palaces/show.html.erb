@@ -49,30 +49,7 @@
           <h4 class="justify-content-between text-center mb-3">
             <strong>Réservez <%= @palace.name %></strong>
           </h4>
-          <div>
-            <%= simple_form_for [@palace, @booking] do |f| %>
-              <div class="form-group mb-3">
-                <%= f.input :arrival_date, as: :date_time_picker, input_html: { data:
-                  {
-                    date_format: "DD.MM.YYYY",
-                    date_day_view_header_format: 'MMM YYYY',
-                    date_side_by_side: true,
-                    date_min_date: Time.current.strftime('%Y-%m-%d')
-                  }}, class: 'border border-dark', placeholder: "DD/MM/YYYY" %>
-              </div>
-              <div class="form-group mb-4">
-                <%= f.input :departure_date, as: :date_time_picker, input_html: { data:
-                  {
-                    date_format: "DD.MM.YYYY",
-                    date_day_view_header_format: 'MMM YYYY',
-                    date_side_by_side: true,
-                    date_min_date: Time.current.strftime('%Y-%m-%d')
-                  }}, class: 'border border-dark', placeholder: "DD/MM/YYYY" %>
-              </div>
-              </div>
-                <%= f.submit 'Book this palace!', class: 'text-white btn btn-dark btn-lg btn-block mb-2' %>
-            <% end %>
-          </div>
+          <%= render 'bookings/new', palace: @palace, booking: @booking %>
           <div class="text-center">
             <span class="so3dpm2">Vous ne serez débité que si vous confirmez</span>
           </div>
