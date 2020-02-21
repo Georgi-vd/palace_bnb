@@ -1,17 +1,23 @@
-<% @bookings.each do |b| %>
-    <%= link_to palace_path(b) do %>
-        <div class="card-palace mb-3" style="max-width: 540px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <%= image_tag'https://source.unsplash.com/collection/8751926', alt: "Palace", class: "card-img" %>
-                </div>
-                <div class="col-md-8">
+<div class="container">
+  <div class="intro">
+    <h3>Your bookings</h3>
+  </div>
+
+  <% @bookings.each do |b| %>
+      <%= link_to palace_path(b) do %>
+          <div class="card-palace mb-3" style="max-width: 540px;">
+              <div class="row no-gutters">
+                  <div class="col-md-4">
+                      <%= cl_image_tag b.palace.photos.first.key, class: "card-img" %>
+                  </div>
+                  <div class="col-md-8">
                     <div class="card-body">
-                        <h3 class="card-title"><%= b.arrival_date %></h3>
-                        <p class="card-text"><%= b.departure_date %></p>
+                      <p class="card-text">Departure date: <%= b.departure_date %></p>
+                      <p class="card-text">Departure date: <%= b.arrival_date %></p>
                     </div>
-                </div>
-            </div>
-        </div>
-    <% end %>
-<% end %>
+                  </div>
+              </div>
+          </div>
+      <% end %>
+  <% end %>
+</div>
