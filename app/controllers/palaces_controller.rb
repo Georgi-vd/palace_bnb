@@ -7,7 +7,8 @@ class PalacesController < ApplicationController
     @markers = @palaces.map do |pal|
       {
         lat: pal.latitude,
-        lng: pal.longitude
+        lng: pal.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { palace: pal })
       }
     end
   end
