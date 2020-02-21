@@ -27,7 +27,6 @@ class PalacesController < ApplicationController
     #@palace.user = current_user
 
     @palace = current_user.palaces.build(palace_params)
-
     if @palace.save
       redirect_to palace_path(@palace)
     else
@@ -54,6 +53,6 @@ class PalacesController < ApplicationController
   private
 
   def palace_params
-    params.require(:palace).permit(:name, :description, :price, :location, :photo)
+    params.require(:palace).permit(:name, :description, :price, :location, photos: [])
   end
 end

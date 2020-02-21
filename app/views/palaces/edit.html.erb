@@ -17,9 +17,10 @@
         <div class="form-group">
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         </div>
-        <div class="flex-btns">
-          <%= f.submit 'Update my palace', class: 'btn btn-dark btn-sm text-white' %>
-          <%= link_to "Back", palaces_path, class: 'btn btn-dark btn-sm text-white' %>
+        <div class="mt-4 flex-btns">
+          <%= link_to "Home page", palaces_path, class: 'btn btn-dark btn-sm text-white px-4 mx-5' %>
+          <%= f.submit 'Update', class: 'btn btn-dark btn-sm text-white px-4' %>
+          <%= link_to "Delete", palace_path(@palace), method: :delete, class: 'btn btn-outline-secondary btn-sm px-4 mx-5 ' %>
         </div>
       <% end %>
   </div>
