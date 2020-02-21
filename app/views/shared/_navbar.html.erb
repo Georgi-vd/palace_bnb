@@ -7,29 +7,29 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <% if user_signed_in? %>
-                        <li class="nav-item mt-2 mr-3">
+                        <li class="nav-item mt-2 mr-3 lightgrey">
                             <%= link_to "Messages", class: "nav-link" %>
                         </li>
-                        <li class="nav-item mt-2 mr-3">
+                        <li class="nav-item mt-2 mr-3 lightgrey">
                             <%= link_to "Help", class: "nav-link" %>
                         </li>
                         <li class="nav-item dropdown">
                             <%= image_tag "https://oasys.ch/wp-content/uploads/2019/03/photo-avatar-profil.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                             <ul class="dropdown-menu dropdown-menu-right text-center depalce-nav-bar" aria-labelledby="navbarDropdown">
-                                <li class="p-1 mt-1">
-                                    <%= link_to "Paramètres", edit_user_registration_path, class: "dropdown-item" %>
+                                <li class="p-1 mt-1 dr-color">
+                                    <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
                                 </li>
                                 <hr>
-                                <li class="p-1 mt-1">
-                                    <%= link_to "Créer un palace", new_palace_path, class: "dropdown-item" %>
+                                <li class="p-1 mt-1 dr-color">
+                                    <%= link_to "Create a Palace", new_palace_path, class: "dropdown-item" %>
                                 </li>
                                 <hr>
-                                <li class="p-1 mt-1">
-                                    <%= link_to "Mes réservations", bookings_path, class: "dropdown-item" %>
+                                <li class="p-1 mt-1 dr-color">
+                                    <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
                                 </li>
                                 <hr>
-                                <li class="p-1 mt-1">
-                                    <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                                <li class="p-1 mt-1 dr-color">
+                                    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                                 </li>
                             </ul>
                         </li>
